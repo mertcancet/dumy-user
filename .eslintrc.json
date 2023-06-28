@@ -12,6 +12,5 @@
     "@typescript-eslint/no-unused-vars": "error",
     "prettier/prettier": 2,
     "@typescript-eslint/no-this-alias": 0
-  },
-  "ignorePatterns": ["amplify/*", "amplify-ts/*"]
+  }
 }
