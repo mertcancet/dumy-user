@@ -1,0 +1,80 @@
+.container {
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 2px 5px 10px 0px rgba(0, 0, 0, 0.1);
+  padding: 44px 30px 41px 30px;
+  max-width: 475px;
+  width: 100%;
+}
+.header {
+  font-size: 32px;
+  font-weight: 700;
+  border-left: 6px solid #f8d442;
+  padding-left: 12.5px;
+  padding-right: 12.5px;
+  margin-bottom: 43px;
+  width: 100%;
+  margin-right: auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 9px;
+}
+.subTitle {
+  color: #6c6c6c;
+  font-size: 14px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.label {
+  color: #6c6c6c;
+  font-size: 14px;
+  font-weight: 500;
+}
+.input {
+  border-radius: 4px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.input::placeholder {
+  color: #cdcdcd;
+  font-size: 12px;
+  font-weight: 400;
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+.submit {
+  border-radius: 4px;
+  background: #feaf00;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 14px;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 27px;
+  margin-top: 10px;
+}
+
+.forgot {
+  color: #6c6c6c;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+.forgot a {
+  color: #feaf00;
+  text-decoration: underline;
+}
