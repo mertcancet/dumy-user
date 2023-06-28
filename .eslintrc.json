@@ -1,3 +1,17 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
+  "rules": {
+    "@typescript-eslint/no-var-requires": 0,
+    "react/react-in-jsx-scope": 2,
+    "@typescript-eslint/no-unused-vars": "error",
+    "prettier/prettier": 2,
+    "@typescript-eslint/no-this-alias": 0
+  },
+  "ignorePatterns": ["amplify/*", "amplify-ts/*"]
 }
