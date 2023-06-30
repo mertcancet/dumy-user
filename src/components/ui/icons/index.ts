@@ -1,10 +1,14 @@
 export { default as Bell } from './Bell';
+export { default as BookmarkPink } from './BookmarkPink';
 export { default as Bookmark } from './Bookmark';
 export { default as CaretCircleDown } from './CaretCircleDown';
 export { default as FileChartLine } from './FileChartLine';
+export { default as GraduationCapBlue } from './GraduationCapBlue';
 export { default as GraduationCap } from './GraduationCap';
 export { default as HomeLgAlt } from './HomeLgAlt';
 export { default as LpLogo } from './LpLogo';
 export { default as SignOutAlt } from './SignOutAlt';
 export { default as SlidersVSquare } from './SlidersVSquare';
+export { default as UsdSquareYellow } from './UsdSquareYellow';
 export { default as UsdSquare } from './UsdSquare';
+export { default as User } from './User';

@@ -1,11 +1,12 @@
 import React from 'react';
 
 import { Layout } from '@/components/ui';
+import { DashboardHome } from '@/components/templates';
 
 const Dashboard = () => {
   return (
     <Layout>
-      <div>asd</div>
+      <DashboardHome />
     </Layout>
   );
 };
