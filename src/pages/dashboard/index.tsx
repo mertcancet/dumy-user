@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Sidebar } from '@/components/ui';
+import { Layout } from '@/components/ui';
 
 const Dashboard = () => {
   return (
-    <div>
-      <Sidebar />
-    </div>
+    <Layout>
+      <div>asd</div>
+    </Layout>
   );
 };
 
