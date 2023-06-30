@@ -4,8 +4,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 175px;
-  padding-bottom: 175px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 32px 16px;
 }
