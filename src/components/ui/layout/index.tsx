@@ -10,7 +10,7 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <div className={styles.container}>
       <Sidebar />
-      <div>
+      <div className={styles.content}>
         <Header />
         {children}
       </div>

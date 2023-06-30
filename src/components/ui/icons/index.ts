@@ -1,4 +1,6 @@
+export { default as Bell } from './Bell';
 export { default as Bookmark } from './Bookmark';
+export { default as CaretCircleDown } from './CaretCircleDown';
 export { default as FileChartLine } from './FileChartLine';
 export { default as GraduationCap } from './GraduationCap';
 export { default as HomeLgAlt } from './HomeLgAlt';
