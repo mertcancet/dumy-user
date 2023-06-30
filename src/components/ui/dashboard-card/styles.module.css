@@ -3,15 +3,31 @@
   background: #f0f9ff;
   padding: 20px;
 }
+.blue {
+  background: #f0f9ff;
+}
+.pink {
+  background: #fef6fb;
+}
+.yellow {
+  background: #fefbec;
+}
+.yellow-grad {
+  background: linear-gradient(134deg, #feaf00 0%, #f8d442 100%);
+}
 .title {
   color: #6c6c6c;
   font-size: 14px;
   font-weight: 500;
   margin-top: 15px;
+  &.white {
+    color: white;
+  }
 }
 .number {
   color: #000;
   font-size: 30px;
   font-weight: 700;
   margin-top: 10px;
+  text-align: right;
 }
