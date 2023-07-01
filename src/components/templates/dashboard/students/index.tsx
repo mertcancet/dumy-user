@@ -9,19 +9,22 @@ import styles from './styles.module.css';
 
 const DashboardStudentsPage = () => {
   const [users, setUsers] = useState<User[] | null>(null);
+  const [search, setSearch] = useState('');
   const [pagination, setPagination] = useState<PaginationType>({
     limit: 5,
     skip: 0,
   });
 
   const getAllUser = useCallback(() => {
-    fetch(`https://dummyjson.com/users?limit=${pagination.limit}&skip=${pagination.skip}`)
+    fetch(
+      `https://dummyjson.com/users/search?q=${search}&limit=${pagination.limit}&skip=${pagination.skip}`
+    )
       .then((res) => res.json())
       .then((res) => {
         setUsers(res.users);
         setPagination({ limit: res.limit, skip: res.skip, total: res.total });
       });
-  }, [pagination.limit, pagination.skip]);
+  }, [pagination.limit, pagination.skip, search]);
 
   useEffect(() => {
     const delay = 300;
@@ -41,9 +44,10 @@ const DashboardStudentsPage = () => {
     };
   }, [getAllUser, pagination.limit, pagination.skip]);
 
+  console.log(search);
   return (
     <div className={styles.container}>
-      <DashboardHeader />
+      <DashboardHeader setSearch={setSearch} />
       {users && <StudentListTable users={users} setUsers={setUsers} />}
       {users && <Pagination pagination={pagination} setPagination={setPagination} />}
     </div>
