@@ -1,4 +1,5 @@
 .container {
   background: #f8f8f8;
   min-height: calc(100vh - 60px);
+  padding-bottom: 30px;
 }

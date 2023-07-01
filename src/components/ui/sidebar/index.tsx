@@ -28,13 +28,12 @@ const sidebarItems = [
 
 const Sidebar = () => {
   const router = useRouter();
-  console.log(router);
   return (
     <aside className={styles.container}>
       <div className={styles.title}>MANAGE COURSES</div>
       <div className={styles.user_info}>
         <div className={styles.avatar}>
-          <Image src="/images/avatar.png" alt="avatar" width={128} height={128} />
+          <Image src="/images/avatar.png" alt="avatar" width={128} height={128} priority />
         </div>
         <div className={styles.username}>John Doe</div>
         <div className={styles.userrole}>Admin</div>
