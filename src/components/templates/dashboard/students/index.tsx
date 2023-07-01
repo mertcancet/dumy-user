@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { DashboardHeader, StudentListTable } from '@/components/ui';
+import { DashboardHeader, Pagination, StudentListTable } from '@/components/ui';
 import styles from './styles.module.css';
 
 const DashboardStudentsPage = () => {
@@ -8,6 +8,7 @@ const DashboardStudentsPage = () => {
     <div className={styles.container}>
       <DashboardHeader />
       <StudentListTable />
+      <Pagination />
     </div>
   );
 };
