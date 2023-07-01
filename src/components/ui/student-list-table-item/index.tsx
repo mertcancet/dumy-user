@@ -23,6 +23,7 @@ const StudentListTableItem: React.FC<Props> = ({ user, setUsers }) => {
         }
       });
   };
+
   return (
     <div className={styles.list_layout}>
       <div>
