@@ -6,6 +6,7 @@
   padding-bottom: 18px;
   overflow-y: auto;
   flex-shrink: 0;
+  position: fixed;
 }
 .title {
   font-size: 20px;
