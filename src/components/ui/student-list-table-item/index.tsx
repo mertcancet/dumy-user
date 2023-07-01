@@ -11,15 +11,24 @@ type Props = {
 };
 
 const StudentListTableItem: React.FC<Props> = ({ user }) => {
-  console.log(user);
   return (
     <div className={styles.list_layout}>
-      <div>image</div>
-      <div>John Doe</div>
-      <div>john@gmail.com</div>
-      <div>7305477760</div>
-      <div>karthi.lorem.com</div>
-      <div>Deckow-Crist</div>
+      <div>
+        <img
+          src={user.image}
+          alt={user.firstName + user.lastName}
+          width={65}
+          height={55}
+          className={styles.avatar}
+        />
+      </div>
+      <div className={styles.cell}>
+        {user.firstName} {user.lastName}
+      </div>
+      <div className={styles.cell}>{user.email}</div>
+      <div className={styles.cell}>{user.phone}</div>
+      <div className={styles.cell}>{user.domain}</div>
+      <div className={styles.cell}>{user.company.name}</div>
       <div className={styles.action}>
         <button>
           <Pen />

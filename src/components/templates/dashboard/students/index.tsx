@@ -10,7 +10,7 @@ const DashboardStudentsPage = () => {
   const getAllUser = () => {
     fetch('https://dummyjson.com/users')
       .then((res) => res.json())
-      .then((res) => setUsers(res));
+      .then((res) => setUsers(res.users));
   };
   useEffect(() => {
     getAllUser();

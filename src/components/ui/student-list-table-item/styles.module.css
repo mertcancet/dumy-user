@@ -16,3 +16,11 @@
   display: flex;
   gap: 33px;
 }
+.avatar {
+  border-radius: 8px;
+  background: #c4c4c4;
+  margin-left: 14px;
+}
+.cell {
+  align-self: center;
+}
