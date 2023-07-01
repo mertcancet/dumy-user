@@ -1,11 +1,13 @@
 import React from 'react';
 
-import { DashboardHeader } from '@/components/ui';
+import { DashboardHeader, StudentListTable } from '@/components/ui';
+import styles from './styles.module.css';
 
 const DashboardStudentsPage = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <DashboardHeader />
+      <StudentListTable />
     </div>
   );
 };

@@ -1,0 +1,11 @@
+.list_layout {
+  display: grid;
+  grid-template-columns: 109px repeat(6, 1fr);
+  align-content: center;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  height: 85px;
+  border-radius: 8px;
+  background: #fff;
+}
