@@ -25,11 +25,9 @@ const StudentListTable: React.FC<Props> = ({ users, setUsers }) => {
       </div>
 
       {users.map((user) => (
-        <>
-          {!user.isDeleted && (
-            <StudentListTableItem key={user.id} user={user} setUsers={setUsers} />
-          )}
-        </>
+        <div key={user.id}>
+          {!user.isDeleted && <StudentListTableItem user={user} setUsers={setUsers} />}
+        </div>
       ))}
     </div>
   );

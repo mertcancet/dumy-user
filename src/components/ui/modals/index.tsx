@@ -25,6 +25,7 @@ const Modal: React.FC<Props> = ({ isOpen, setIsOpen, children }) => {
       onRequestClose={() => setIsOpen(false)}
       style={customStyles}
       contentLabel="Example Modal"
+      ariaHideApp={false}
     >
       <button onClick={() => setIsOpen(false)}>X</button>
       <div>{children}</div>
