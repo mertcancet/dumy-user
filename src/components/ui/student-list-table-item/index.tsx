@@ -1,10 +1,11 @@
 import React, { Dispatch, SetStateAction } from 'react';
 
 import { Pen, Trash } from '../icons';
-
-import { User } from '@/types/user';
+import EditStudentModal from '../modals/edit-student-modal';
 
 import styles from './styles.module.css';
+
+import { User } from '@/types/user';
 
 type Props = {
   user: User;
@@ -12,6 +13,8 @@ type Props = {
 };
 
 const StudentListTableItem: React.FC<Props> = ({ user, setUsers }) => {
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
   const deleteUser = () => {
     fetch(`https://dummyjson.com/users/${user.id}`, {
       method: 'DELETE',
@@ -25,32 +28,40 @@ const StudentListTableItem: React.FC<Props> = ({ user, setUsers }) => {
   };
 
   return (
-    <div className={styles.list_layout}>
-      <div>
-        <img
-          src={user.image}
-          alt={user.firstName + user.lastName}
-          width={65}
-          height={55}
-          className={styles.avatar}
-        />
+    <>
+      <div className={styles.list_layout}>
+        <div>
+          <img
+            src={user.image}
+            alt={user.firstName + user.lastName}
+            width={65}
+            height={55}
+            className={styles.avatar}
+          />
+        </div>
+        <div className={styles.cell}>
+          {user.firstName} {user.lastName}
+        </div>
+        <div className={styles.cell}>{user.email}</div>
+        <div className={styles.cell}>{user.phone}</div>
+        <div className={styles.cell}>{user.domain}</div>
+        <div className={styles.cell}>{user.company.name}</div>
+        <div className={styles.action}>
+          <button onClick={() => setIsOpen(true)}>
+            <Pen />
+          </button>
+          <button onClick={deleteUser}>
+            <Trash />
+          </button>
+        </div>
       </div>
-      <div className={styles.cell}>
-        {user.firstName} {user.lastName}
-      </div>
-      <div className={styles.cell}>{user.email}</div>
-      <div className={styles.cell}>{user.phone}</div>
-      <div className={styles.cell}>{user.domain}</div>
-      <div className={styles.cell}>{user.company.name}</div>
-      <div className={styles.action}>
-        <button>
-          <Pen />
-        </button>
-        <button onClick={deleteUser}>
-          <Trash />
-        </button>
-      </div>
-    </div>
+      <EditStudentModal
+        isOpen={modalIsOpen}
+        setIsOpen={setIsOpen}
+        user={user}
+        setUsers={setUsers}
+      />
+    </>
   );
 };
 
