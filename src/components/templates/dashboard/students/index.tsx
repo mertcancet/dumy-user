@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
 import { DashboardHeader, Pagination, StudentListTable } from '@/components/ui';
-import styles from './styles.module.css';
 
 import { User } from '@/types/user';
 import { Pagination as PaginationType } from '@/types/pagination';
+
+import styles from './styles.module.css';
 
 const DashboardStudentsPage = () => {
   const [users, setUsers] = useState<User[] | null>(null);
@@ -40,11 +41,10 @@ const DashboardStudentsPage = () => {
     };
   }, [getAllUser, pagination.limit, pagination.skip]);
 
-  console.log(pagination.skip);
   return (
     <div className={styles.container}>
       <DashboardHeader />
-      {users && <StudentListTable users={users} />}
+      {users && <StudentListTable users={users} setUsers={setUsers} />}
       {users && <Pagination pagination={pagination} setPagination={setPagination} />}
     </div>
   );

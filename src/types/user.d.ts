@@ -58,4 +58,6 @@ export type User = {
   ein: string;
   ssn: string;
   userAgent: string;
+  isDeleted?: boolean;
+  deletedOn?: string;
 };

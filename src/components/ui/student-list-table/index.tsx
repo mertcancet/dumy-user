@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 
 import StudentListTableItem from '../student-list-table-item';
 
@@ -8,9 +8,10 @@ import { User } from '@/types/user';
 
 type Props = {
   users: User[];
+  setUsers: Dispatch<SetStateAction<User>>;
 };
 
-const StudentListTable: React.FC<Props> = ({ users }) => {
+const StudentListTable: React.FC<Props> = ({ users, setUsers }) => {
   return (
     <div className={styles.container}>
       <div className={styles.layout}>
@@ -24,7 +25,11 @@ const StudentListTable: React.FC<Props> = ({ users }) => {
       </div>
 
       {users.map((user) => (
-        <StudentListTableItem key={user.id} user={user} />
+        <>
+          {!user.isDeleted && (
+            <StudentListTableItem key={user.id} user={user} setUsers={setUsers} />
+          )}
+        </>
       ))}
     </div>
   );

@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 
 import { Pen, Trash } from '../icons';
 
-import styles from './styles.module.css';
-
 import { User } from '@/types/user';
+
+import styles from './styles.module.css';
 
 type Props = {
   user: User;
+  setUsers: Dispatch<SetStateAction<User>>;
 };
 
-const StudentListTableItem: React.FC<Props> = ({ user }) => {
+const StudentListTableItem: React.FC<Props> = ({ user, setUsers }) => {
+  const deleteUser = () => {
+    fetch(`https://dummyjson.com/users/${user.id}`, {
+      method: 'DELETE',
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.isDeleted) {
+          setUsers((prev) => prev.filter((user) => user.id !== res.id));
+        }
+      });
+  };
   return (
     <div className={styles.list_layout}>
       <div>
@@ -33,7 +45,7 @@ const StudentListTableItem: React.FC<Props> = ({ user }) => {
         <button>
           <Pen />
         </button>
-        <button>
+        <button onClick={deleteUser}>
           <Trash />
         </button>
       </div>
