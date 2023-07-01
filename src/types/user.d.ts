@@ -1,5 +1,4 @@
 export type User = {
-  filter(arg0: (user: any) => boolean): User;
   id: number;
   firstName: string;
   lastName: string;

@@ -8,7 +8,7 @@ import { User } from '@/types/user';
 
 type Props = {
   users: User[];
-  setUsers: Dispatch<SetStateAction<User>>;
+  setUsers: Dispatch<SetStateAction<User[] | null>>;
 };
 
 const StudentListTable: React.FC<Props> = ({ users, setUsers }) => {

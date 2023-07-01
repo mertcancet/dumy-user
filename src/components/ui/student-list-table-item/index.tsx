@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 
 type Props = {
   user: User;
-  setUsers: Dispatch<SetStateAction<User>>;
+  setUsers: Dispatch<SetStateAction<User[] | null>>;
 };
 
 const StudentListTableItem: React.FC<Props> = ({ user, setUsers }) => {
@@ -19,7 +19,7 @@ const StudentListTableItem: React.FC<Props> = ({ user, setUsers }) => {
       .then((res) => res.json())
       .then((res) => {
         if (res.isDeleted) {
-          setUsers((prev) => prev.filter((user) => user.id !== res.id));
+          setUsers((prev) => prev && prev.filter((user) => user.id !== res.id));
         }
       });
   };
