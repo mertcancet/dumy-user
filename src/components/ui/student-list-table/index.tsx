@@ -1,9 +1,16 @@
 import React from 'react';
 
-import styles from './styles.module.css';
 import StudentListTableItem from '../student-list-table-item';
 
-const StudentListTable = () => {
+import styles from './styles.module.css';
+
+import { User } from '@/types/user';
+
+type Props = {
+  users: User[];
+};
+
+const StudentListTable: React.FC<Props> = ({ users }) => {
   return (
     <div className={styles.container}>
       <div className={styles.layout}>
@@ -15,7 +22,10 @@ const StudentListTable = () => {
         <div>Company Name</div>
         <div></div>
       </div>
-      <StudentListTableItem />
+
+      {users.map((user) => (
+        <StudentListTableItem key={user.id} user={user} />
+      ))}
     </div>
   );
 };

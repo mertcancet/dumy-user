@@ -4,7 +4,14 @@ import { Pen, Trash } from '../icons';
 
 import styles from './styles.module.css';
 
-const StudentListTableItem = () => {
+import { User } from '@/types/user';
+
+type Props = {
+  user: User;
+};
+
+const StudentListTableItem: React.FC<Props> = ({ user }) => {
+  console.log(user);
   return (
     <div className={styles.list_layout}>
       <div>image</div>
