@@ -23,8 +23,23 @@ const DashboardStudentsPage = () => {
   }, [pagination.limit, pagination.skip]);
 
   useEffect(() => {
-    getAllUser();
-  }, [pagination.limit, pagination.skip]);
+    const delay = 300;
+    let timer: string | number | NodeJS.Timeout | undefined;
+
+    const delayRequest = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        getAllUser();
+      }, delay);
+    };
+
+    delayRequest();
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [getAllUser, pagination.limit, pagination.skip]);
+
   console.log(pagination.skip);
   return (
     <div className={styles.container}>
