@@ -23,6 +23,7 @@ const AddNewStudentModal: React.FC<Props> = ({ isOpen, setIsOpen }) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         firstName: inputs.name,
+        lastName: inputs.lastname,
         email: inputs.email,
         phone: inputs.phone,
         domain: inputs.website,
@@ -43,6 +44,18 @@ const AddNewStudentModal: React.FC<Props> = ({ isOpen, setIsOpen }) => {
             type="text"
             name="name"
             value={inputs.name || ''}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label className={styles.label}>
+          Last Name
+          <input
+            className={styles.input}
+            placeholder="Name"
+            type="text"
+            name="lastname"
+            value={inputs.lastname || ''}
             onChange={handleChange}
             required
           />

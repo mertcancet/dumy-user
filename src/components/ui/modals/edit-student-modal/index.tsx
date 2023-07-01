@@ -13,7 +13,8 @@ type Props = {
 };
 const EditStudentModal: React.FC<Props> = ({ isOpen, setIsOpen, user, setUsers }) => {
   const [inputs, setInputs] = useState<any>({
-    name: user.firstName + ' ' + user.lastName,
+    name: user.firstName,
+    lastname: user.lastName,
     email: user.email,
     phone: user.phone,
     website: user.email,
@@ -34,6 +35,7 @@ const EditStudentModal: React.FC<Props> = ({ isOpen, setIsOpen, user, setUsers }
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         firstName: inputs.name,
+        lastName: inputs.lastname,
         email: inputs.email,
         phone: inputs.phone,
         domain: inputs.website,
@@ -46,7 +48,6 @@ const EditStudentModal: React.FC<Props> = ({ isOpen, setIsOpen, user, setUsers }
           (prev) =>
             prev &&
             prev.map((user) => {
-              console.log('slllll');
               if (user.id === res.id) {
                 return res;
               } else return user;
@@ -68,6 +69,18 @@ const EditStudentModal: React.FC<Props> = ({ isOpen, setIsOpen, user, setUsers }
             type="text"
             name="name"
             value={inputs.name || ''}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label className={styles.label}>
+          Last Name
+          <input
+            className={styles.input}
+            placeholder="Last Name"
+            type="text"
+            name="lastname"
+            value={inputs.lastname || ''}
             onChange={handleChange}
             required
           />
