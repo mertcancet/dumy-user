@@ -13,7 +13,7 @@ const SignUpForm = () => {
   };
   return (
     <div className={styles.container}>
-      <h1 className={styles.header}>MANAGE COURSES</h1>
+      <div className={styles.header}>MANAGE COURSES</div>
       <h3 className={styles.title}>Sign In</h3>
       <h5 className={styles.subTitle}>Enter your credentials to access your account</h5>
 
