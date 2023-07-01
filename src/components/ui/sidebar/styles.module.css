@@ -10,6 +10,9 @@
 .title {
   font-size: 20px;
   font-weight: 700;
+  border-left: 4px solid #feaf00;
+  padding-left: 12.5px;
+  margin-left: 25px;
 }
 
 .user_info {
@@ -24,9 +27,9 @@
     width: 128px;
     height: 128px;
     border-radius: 50%;
-    border: 1px solid red;
     display: grid;
     place-content: center;
+    overflow: hidden;
   }
   .username {
     font-size: 17px;
@@ -53,14 +56,20 @@
     margin-right: auto;
     .item {
       border-radius: 4px;
-      border: 1px solid red;
-      padding: 11px 10px 13px 41px;
+      overflow: hidden;
       margin-bottom: 20px;
       font-size: 14px;
       font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 15px;
+      width: 100%;
+      .link {
+        padding: 11px 10px 13px 41px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        &.active {
+          background: #feaf00;
+        }
+      }
     }
   }
   .logout {
