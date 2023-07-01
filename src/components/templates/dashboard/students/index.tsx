@@ -42,12 +42,12 @@ const DashboardStudentsPage = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [getAllUser, pagination.limit, pagination.skip]);
+  }, [getAllUser, pagination.limit, pagination.skip, search]);
 
   console.log(search);
   return (
     <div className={styles.container}>
-      <DashboardHeader setSearch={setSearch} />
+      <DashboardHeader setSearch={setSearch} setPagination={setPagination} />
       {users && <StudentListTable users={users} setUsers={setUsers} />}
       {users && <Pagination pagination={pagination} setPagination={setPagination} />}
     </div>

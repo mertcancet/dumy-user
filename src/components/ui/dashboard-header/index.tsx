@@ -1,13 +1,17 @@
 import React from 'react';
 
-import styles from './styles.module.css';
 import AddNewStudentModal from '../modals/add-new-student-modal';
+
+import styles from './styles.module.css';
+
+import { Pagination } from '@/types/pagination';
 
 type Props = {
   setSearch: React.Dispatch<React.SetStateAction<string>>;
+  setPagination: React.Dispatch<React.SetStateAction<Pagination>>;
 };
 
-const DashboardHeader: React.FC<Props> = ({ setSearch }) => {
+const DashboardHeader: React.FC<Props> = ({ setSearch, setPagination }) => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const [inputValue, setInputValue] = React.useState('');
@@ -18,6 +22,10 @@ const DashboardHeader: React.FC<Props> = ({ setSearch }) => {
 
   React.useEffect(() => {
     const timeoutId = setTimeout(() => {
+      setPagination({
+        limit: 5,
+        skip: 0,
+      });
       setSearch(inputValue);
     }, 500);
     return () => clearTimeout(timeoutId);
