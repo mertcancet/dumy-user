@@ -7,14 +7,15 @@ import styles from './styles.module.css';
 import { Pagination } from '@/types/pagination';
 
 type Props = {
+  search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
   setPagination: React.Dispatch<React.SetStateAction<Pagination>>;
 };
 
-const DashboardHeader: React.FC<Props> = ({ setSearch, setPagination }) => {
+const DashboardHeader: React.FC<Props> = ({ search, setSearch, setPagination }) => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
-  const [inputValue, setInputValue] = React.useState('');
+  const [inputValue, setInputValue] = React.useState(search);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
